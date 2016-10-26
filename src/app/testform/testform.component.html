@@ -1,0 +1,31 @@
+<section>
+    <h1>Model-based Form Example:</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <p class="{{colstyle}}">
+            <label>{{fieldnm}}</label>
+            <input type="text" formControlName="{{fcname}}" [attr.maxlength]="maxlen" >
+        </p>
+        <p>
+            <label>Reference No</label>
+            <input type="text" formControlName="reference_no">
+        </p>
+         <p>
+            <label>Currency</label>
+            <select name="Currency" id="currency" formControlName="currency">
+            <option *ngFor="let currency of currencyList">{{currency.code}}</option>
+            </select>
+        </p>
+        <p>
+            <label>Amount</label>
+            <input type="number" formControlName="amount">
+        </p>
+        <p>
+            <label>Expiry Date</label>
+            <input type="date" formControlName="expiry_date">
+        </p>
+        <p>
+            <button type="submit" [disabled]="!form.valid">Submit</button>
+        </p>
+    </form>
+</section>

@@ -1,0 +1,345 @@
+<div id="accordion" role="tablist" aria-multiselectable="true">
+	<form>
+  <div class="card">
+    <div class="card-header" role="tab" id="primary">
+      <h5 class="mb-0">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapsePrimary" aria-expanded="true" aria-controls="collapsePrimary">
+          Primary Details
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapsePrimary" class="collapse in" role="tabpanel" aria-labelledby="primary">
+      <div class="card-block">
+						<div class="form-group col-md-6">
+							<label for="copy_from" class="col-md-4 col-form-label">Copy From</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="copy_from" placeholder="Old LC Number or Template ID">
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="reference_no" class="col-md-4 col-form-label">Reference No</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="reference_no" required>
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="currency" class="col-md-4 col-form-label">Currency</label>
+							<div class="col-md-8">
+								<select class="form-control" id="currency">
+                    <option *ngFor="let currency of currencyList">{{currency.code}}</option>
+                    </select>
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="amount" class="col-md-4 col-form-label">Amount</label>
+							<div class="col-md-8">
+								<input type="number" class="form-control" id="amount">
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="tolerance_plus" class="col-md-4 col-xs-3 col-form-label">Tolerance +</label>
+							<div class="col-md-2 col-xs-3">
+								<input type="range" class="form-control" id="tolerance_plus">
+							</div>
+							<label for="tolerance_minus" class="col-md-4 col-xs-3 col-form-label">Tolerance -</label>
+							<div class="col-md-2 col-xs-3">
+								<input type="range" class="form-control" id="tolerance_minus">
+							</div>
+						</div>
+            <div class="form-group col-md-6">
+							<label for="expiry_date" class="col-md-4 col-form-label">Expiry Date</label>
+							<div class="col-md-8">
+								<input type="date" class="form-control" id="expiry_date">
+							</div>
+						</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="participants">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseParticipants" aria-expanded="false" aria-controls="collapseParticipants">
+          Participants
+        </a>
+      </h5>
+    </div>
+    <div id="collapseParticipants" class="collapse" role="tabpanel" aria-labelledby="participants">
+      <div class="card-block">
+      <div class="col-md-6">
+        	<div class="form-group row">
+							<label for="party_type" class="col-md-4 col-form-label">Party Type</label>
+							<div class="col-md-8"><select class="form-control" id="party_type">
+                <option *ngFor="let party of partyList">{{party.name}}</option>
+          </select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="party_name" class="col-md-4 col-form-label">Name</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="party_name">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="party_address1" class="col-md-4 col-form-label">Address 1</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="party_address1">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="party_address2" class="col-md-4 col-form-label">Address 2</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="party_address2">
+							</div>
+
+						</div>
+						<div class="form-group row">
+							<label for="party_address3" class="col-md-4 col-form-label">Address 3</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="party_address3">
+							</div>
+
+						</div>
+						<div class="form-group row">
+							<label for="party_country" class="col-md-4 col-form-label">Country</label>
+							<div class="col-md-8">
+								<select class="form-control" id="party_country">
+                  <option *ngFor="let country of countryList">{{country.name}}</option>
+          </select>
+							</div>
+
+						</div>
+      </div>
+      <div class="col-md-6">
+        						<div class="form-group row">
+							<label for="party_type" class="col-md-4 col-form-label">Party Type</label>
+							<div class="col-md-8"><select class="form-control" id="party_type">
+                <option *ngFor="let party of partyList">{{party.name}}</option>
+          </select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="party_name" class="col-md-4 col-form-label">Name</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="party_name">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="party_address1" class="col-md-4 col-form-label">Address 1</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="party_address1">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="party_address2" class="col-md-4 col-form-label">Address 2</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="party_address2">
+							</div>
+
+						</div>
+						<div class="form-group row">
+							<label for="party_address3" class="col-md-4 col-form-label">Address 3</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="party_address3">
+							</div>
+
+						</div>
+						<div class="form-group row">
+							<label for="party_country" class="col-md-4 col-form-label">Country</label>
+							<div class="col-md-8">
+								<select class="form-control" id="party_country">
+                  <option *ngFor="let country of countryList">{{country.name}}</option>
+          </select>
+							</div>
+
+						</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab" id="tenor">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTenor" aria-expanded="false" aria-controls="collapseTenor">
+          Tenor and Availability
+        </a>
+      </h5>
+    </div>
+    <div id="collapseTenor" class="collapse" role="tabpanel" aria-labelledby="tenor">
+      <div class="card-block">
+						<div class="form-group col-md-6">
+							<label for="available_by" class="col-md-4 col-form-label">Available By</label>
+							<div class="col-md-8">
+								<select class="form-control" id="available_by">
+                    <option>By Payment</option>
+                    <option>By Acceptance</option>
+                    </select>
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="available_with" class="col-md-4 col-form-label">Available With</label>
+							<div class="col-md-8">
+								<select class="form-control" id="available_with">
+                    <option *ngFor="let party of partyList">{{party.name}}</option>
+                    </select>
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="tenor_term" class="col-md-4 col-form-label">Tenor Term</label>
+							<div class="col-md-8">
+								<select class="form-control" id="tenor_term">
+                    <option>After BL Date</option>
+                    <option>After Shipment Date</option>
+                    <option>After Delivery Date</option>
+                    </select>
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="drafts_on" class="col-md-4 col-form-label">Drafts on</label>
+							<div class="col-md-8">
+								<select class="form-control" id="drafts_on">
+                    <option *ngFor="let party of partyList">{{party.name}}</option>
+                    </select>
+							</div>
+						</div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header" role="tab" id="shipment">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseShipment" aria-expanded="false" aria-controls="collapseShipment">
+          Shipment Details
+        </a>
+      </h5>
+    </div>
+    <div id="collapseShipment" class="collapse" role="tabpanel" aria-labelledby="shipment">
+      <div class="card-block">
+        <div class="col-md-6">
+        <div class="form-group row">
+							<label for="place_of_receipt" class="col-md-4 col-form-label">Place of Receipt (44A)</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="place_of_receipt">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="port_of_loading" class="col-md-4 col-form-label">Port of Loading (44E)</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="port_of_loading">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="port_of_discharge" class="col-md-4 col-form-label">Port of Discharge (44F)</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="port_of_discharge">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="final_destination" class="col-md-4 col-form-label">Final Destination (44B)</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="final_destination">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="latest_shipment" class="col-md-4 col-form-label">Latest Shipment Date</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="latest_shipment">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="presentation_period" class="col-md-4 col-form-label">Presentation Days</label>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="presentation_period">
+							</div>
+							<label for="presentation_clause" class="col-form-label hidden-sm-up">Presentation Clause</label>
+							<div class="col-md-5">
+								<textarea class="form-control" rows="5" cols="65" id="presentation_clause"></textarea>
+							</div>
+						</div>
+					</div>
+
+<div class="col-md-6">
+  						<div class="form-group row">
+							<label for="shipment_by" class="col-md-4 col-form-label">Shipment Mode</label>
+							<div class="col-md-8">
+								<select class="form-control" id="shipment_by">
+                    <option>Sea</option>
+                    <option>Air</option>
+                    <option>Local Delivery</option>
+                    </select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="incoterm" class="col-md-4 col-form-label">Incoterm</label>
+							<div class="col-md-8">
+								<select class="form-control" id="incoterm">
+                    <option>EXW</option>
+                    <option>FCA</option>
+                    <option>FOB</option>
+                    <option>CFR</option>
+                    <option>CIF</option>
+                    <option>CIP</option>
+                    </select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="incoterm_place" class="col-md-4 col-form-label">Incoterm Place</label>
+							<div class="col-md-8">
+								<input type="text" class="form-control" id="incoterm_place">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="shipment_period" class="col-md-4 col-form-label">Shipment Period (44D)</label>
+							<div class="col-md-8">
+								<textarea class="form-control" rows="5" cols="65" id="shipment_period"></textarea>
+							</div>
+						</div>
+</div>
+
+          </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header" role="tab" id="goodsdocs">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseGoods" aria-expanded="false" aria-controls="collapseGoods">
+          Goods, Documents and Additional Conditions
+        </a>
+      </h5>
+    </div>
+    <div id="collapseGoods" class="collapse" role="tabpanel" aria-labelledby="goodsdocs">
+      <div class="card-block">
+        Anim pariatur cliche reprehenderit, enim eiumdod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiumdod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header" role="tab" id="account">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseAccount" aria-expanded="false" aria-controls="collapseAccount">
+          Account Details, Special Instructions
+        </a>
+      </h5>
+    </div>
+    <div id="collapseAccount" class="collapse" role="tabpanel" aria-labelledby="account">
+      <div class="card-block">
+        Anim pariatur cliche reprehenderit, enim eiumdod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiumdod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-header" role="tab" id="attachments">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseAttachments" aria-expanded="false" aria-controls="collapseAttachments">
+          Attachments
+        </a>
+      </h5>
+    </div>
+    <div id="collapseAttachments" class="collapse" role="tabpanel" aria-labelledby="attachments">
+      <div class="card-block">
+        Anim pariatur cliche reprehenderit, enim eiumdod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiumdod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  </form>
+</div>
