@@ -1,5 +1,5 @@
 * {
-    border-radius: 0px !important;
+    border-radius: 0em !important;
 }
 
 select:not([multiple]) {
@@ -12,7 +12,46 @@ select:not([multiple]) {
     padding-right: 1.5em
 }
 
+//for breaking word at col-length of the text area
+textarea {
+    -webkit-appearance: textarea;
+    font-family: Courier;
+    overflow-y: scroll;
+    resize: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    margin: 0em 0em 0em 0em;
+    white-space: pre-wrap;
+    padding: 10px;
+}
 
-    
+input {
+    font-family: Courier;
+}
+
+select {
+    font-family: Courier;
+}
+
+// .form-control{
+//     margin-bottom: 0.3rem;
+// }
+
+label{
+    margin-bottom: 0.1rem;
+}
+
+legend{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+fieldset{
+    margin-bottom: 0.5rem;
+}
+
 
 
