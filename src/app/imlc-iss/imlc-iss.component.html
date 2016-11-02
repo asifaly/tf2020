@@ -17,24 +17,17 @@
             <input type="text" class="form-control" id="reference_no" required>
             <label for="expiry_date">Expiry Date</label>
             <input type="date" class="form-control" id="expiry_date">
-						<p class="form-control-static">&nbsp;</p>
-												<fieldset>
-							<label for="dnc" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="dnc" name="confirmRadio"> DO NOT CONFIRM</label>
-							
-							<label for="may" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="may" name="confirmRadio"> MAY ADD</label>
-							
-							<label for="con" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="con" name="confirmRadio"> CONFIRM</label>
-							
-						</fieldset>
-
-							<fieldset>
-							<label for="transfer" class="form-check-inline"><input type="checkbox" class="form-check-input" value="" id="transfer"> Transferable</label>
-							
-							<label for="revolving" class="form-check-inline"><input type="checkbox" class="form-check-input" value="" id="may"> Revolving</label>
-							
-							<label for="backtoback" class="form-check-inline"><input type="checkbox" class="form-check-input" value="" id="con"> Back to Back</label>
-							
-						</fieldset>
+            <p class="form-control-static">&nbsp;</p>
+            <fieldset>
+              <label for="dnc" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="dnc" name="confirmRadio"> DO NOT CONFIRM</label>
+              <label for="may" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="may" name="confirmRadio"> MAY ADD</label>
+              <label for="con" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="con" name="confirmRadio"> CONFIRM</label>
+            </fieldset>
+            <fieldset>
+              <label for="transfer" class="form-check-inline"><input type="checkbox" class="form-check-input" value="" id="transfer"> Transferable</label>
+              <label for="revolving" class="form-check-inline"><input type="checkbox" class="form-check-input" value="" id="may"> Revolving</label>
+              <label for="backtoback" class="form-check-inline"><input type="checkbox" class="form-check-input" value="" id="con"> Back to Back</label>
+            </fieldset>
           </fieldset>
           <fieldset class="form-group col-md-6">
             <label for="currency" class="form-control-label">Currency</label>
@@ -115,34 +108,41 @@
       </div>
       <div id="collapseTenor" class="collapse" role="tabpanel" aria-labelledby="tenor">
         <div class="card-block">
-
-
-
           <div class="form-group col-md-6">
-												<fieldset>
-							<label for="sight" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="sight" name="tenorRadio"> Sight</label>
-							
-							<label for="time" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="time" name="tenorRadio"> Time</label>
-							
-							<label for="mixed" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="mixed" name="tenorRadio"> Mixed Payment</label>
-							
-						</fieldset>
-            <label for="tenor_term" class="col-form-label">Tenor Term</label>
-            <select class="form-control" id="tenor_term">
+            <fieldset>
+              <label for="sight" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="sight" name="tenorRadio"> Sight</label>
+              <label for="time" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="time" name="tenorRadio"> Time</label>
+              <label for="mixed" class="form-check-inline"><input type="radio" class="form-check-input" value="" id="mixed" name="tenorRadio"> Mixed Payment</label>
+            </fieldset>
+            <div class="row">
+              <fieldset class="col-lg-4">
+                <label for="tenor_days" class="col-form-label">Tenor Days</label>
+                <input type="text" class="form-control" id="tenor_days">
+              </fieldset>
+              <fieldset class="col-lg-8">
+                <label for="tenor_term" class="col-form-label">Tenor Term</label>
+                <select class="form-control" id="tenor_term">
                     <option>After BL Date</option>
                     <option>After Shipment Date</option>
                     <option>After Delivery Date</option>
                     </select>
+              </fieldset>
+            </div>
+            <label for="tenor_duedt" class="col-form-label">Due Date</label>
+            <input type="date" class="form-control" id="tenor_duedt">
             <label for="drafts_on" class="col-form-label">Drafts on</label>
             <select class="form-control" id="drafts_on">
                     <option *ngFor="let party of partyList">{{party.name}}</option>
                     </select>
           </div>
-					          <div class="form-group col-md-6">
+          <div class="form-group col-md-6">
             <label for="available_by" class="col-form-label">Available By</label>
             <select class="form-control" id="available_by">
                     <option>By Payment</option>
+										<option>By Negotiation</option>
                     <option>By Acceptance</option>
+										<option>By Deferred Payment</option>
+										<option>By Mixed Payment</option>
                     </select>
             <label for="available_with" class="col-form-label">Available With</label>
             <select class="form-control" id="available_with">
@@ -163,35 +163,30 @@
       <div id="collapseShipment" class="collapse" role="tabpanel" aria-labelledby="shipment">
         <div class="card-block">
           <div class="col-md-6">
-              <label for="place_of_receipt" class="col-form-label">Place of Receipt (44A)</label>
-                <input type="text" class="form-control" id="place_of_receipt">
-
-              <label for="port_of_loading" class="col-form-label">Port of Loading (44E)</label>
-                <input type="text" class="form-control" id="port_of_loading">
-								
-              <label for="port_of_discharge" class="col-form-label">Port of Discharge (44F)</label>
-                <input type="text" class="form-control" id="port_of_discharge">
-
-              <label for="final_destination" class="col-form-label">Final Destination (44B)</label>
-                <input type="text" class="form-control" id="final_destination">
-
-              <label for="latest_shipment" class="col-form-label">Latest Shipment Date</label>
-                <input type="text" class="form-control" id="latest_shipment">
-
-              <label for="presentation_period" class="col-form-label">Presentation Days</label>
-                <input type="text" class="form-control" id="presentation_period">
-              <label for="presentation_clause" class="col-form-label">Presentation Clause</label>
-                <textarea class="form-control" rows="5" cols="65" id="presentation_clause"></textarea>
+            <label for="place_of_receipt" class="col-form-label">Place of Receipt (44A)</label>
+            <input type="text" class="form-control" id="place_of_receipt">
+            <label for="port_of_loading" class="col-form-label">Port of Loading (44E)</label>
+            <input type="text" class="form-control" id="port_of_loading">
+            <label for="port_of_discharge" class="col-form-label">Port of Discharge (44F)</label>
+            <input type="text" class="form-control" id="port_of_discharge">
+            <label for="final_destination" class="col-form-label">Final Destination (44B)</label>
+            <input type="text" class="form-control" id="final_destination">
+            <label for="latest_shipment" class="col-form-label">Latest Shipment Date</label>
+            <input type="date" class="form-control" id="latest_shipment">
+            <label for="presentation_period" class="col-form-label">Presentation Days</label>
+            <input type="text" class="form-control" id="presentation_period">
+            <label for="presentation_clause" class="col-form-label">Presentation Clause</label>
+            <textarea class="form-control" rows="5" cols="65" id="presentation_clause"></textarea>
           </div>
           <div class="col-md-6">
-              <label for="shipment_by" class="col-form-label">Shipment Mode</label>
-                <select class="form-control" id="shipment_by">
+            <label for="shipment_by" class="col-form-label">Shipment Mode</label>
+            <select class="form-control" id="shipment_by">
                     <option>Sea</option>
                     <option>Air</option>
                     <option>Local Delivery</option>
                     </select>
-              <label for="incoterm" class="col-form-label">Incoterm</label>
-                <select class="form-control" id="incoterm">
+            <label for="incoterm" class="col-form-label">Incoterm</label>
+            <select class="form-control" id="incoterm">
                     <option>EXW</option>
                     <option>FCA</option>
                     <option>FOB</option>
@@ -199,10 +194,10 @@
                     <option>CIF</option>
                     <option>CIP</option>
                     </select>
-              <label for="incoterm_place" class="col-form-label">Incoterm Place</label>
-                <input type="text" class="form-control" id="incoterm_place">
-              <label for="shipment_period" class="col-form-label">Shipment Period (44D)</label>
-                <textarea class="form-control" rows="5" cols="65" id="shipment_period"></textarea>
+            <label for="incoterm_place" class="col-form-label">Incoterm Place</label>
+            <input type="text" class="form-control" id="incoterm_place">
+            <label for="shipment_period" class="col-form-label">Shipment Period (44D)</label>
+            <textarea class="form-control" rows="5" cols="65" id="shipment_period"></textarea>
           </div>
         </div>
       </div>
@@ -217,7 +212,7 @@
       </div>
       <div id="collapseGoods" class="collapse" role="tabpanel" aria-labelledby="goodsdocs">
         <div class="card-block">
-					<fieldset class="form-group">
+          <fieldset class="form-group">
             <label for="goods_description" class="form-control-label">Goods Description</label>
             <textarea class="form-control form-control-width" rows="5" cols="65" id="goods_description"></textarea>
             <label for="docs_required" class="form-control-label">Documents Required</label>
@@ -238,12 +233,12 @@
       </div>
       <div id="collapseAccount" class="collapse" role="tabpanel" aria-labelledby="account">
         <div class="card-block">
-          Anim pariatur cliche reprehenderit, enim eiumdod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiumdod. Brunch 3 wolf moon tempor, sunt
-          aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-          labore sustainable VHS.
+          <fieldset class="form-group">
+            <label for="bank_comments" class="form-control-label">Comments to Bank</label>
+            <textarea class="form-control" id="bank_comments" rows="5"></textarea>
+            <label for="internal_comments" class="form-control-label">Comments Internal</label>
+            <textarea class="form-control" id="internal_comments" rows="5"></textarea>
+          </fieldset>
         </div>
       </div>
     </div>
@@ -257,12 +252,17 @@
       </div>
       <div id="collapseAttachments" class="collapse" role="tabpanel" aria-labelledby="attachments">
         <div class="card-block">
-          Anim pariatur cliche reprehenderit, enim eiumdod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-          non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiumdod. Brunch 3 wolf moon tempor, sunt
-          aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-          craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-          labore sustainable VHS.
+          <fieldset class="form-group">
+            <label for="attachment_type" class="col-form-label">Attachment Type</label>
+            <select class="form-control" id="attachment_type">
+									<option>Proforma Invoice</option>
+									<option>Contract</option>
+									</select>
+            <label class="custom-file">
+  				<input type="file" id="file" class="custom-file-input">
+ 					 <span class="custom-file-control"></span>
+</label>
+          </fieldset>
         </div>
       </div>
     </div>

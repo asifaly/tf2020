@@ -11,7 +11,7 @@ export class ImlcIssComponent implements OnInit {
   partyList: Party[] = [];
   countryList: Country[] = [];
 
-  constructor(private _country:CountryService, private _party: PartyService, private _currency: CurrencyService) { }
+  constructor(private _country: CountryService, private _party: PartyService, private _currency: CurrencyService) { }
 
   ngOnInit() {
     this._currency.getCurrency().then(currency => this.currencyList = currency);
