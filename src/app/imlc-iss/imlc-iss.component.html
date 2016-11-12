@@ -12,9 +12,9 @@
         <div class="card-block">
           <fieldset class="form-group col-md-6">
             <label for="copy_from" class="form-control-label">Copy From</label>
-            <input type="text" class="form-control" id="copy_from" placeholder="Old LC Number or Template ID">
+            <input type="text" class="form-control" id="copy_from" placeholder="Old LC Number or Template ID" maxlength="16">
             <label for="reference_no" class="form-control-label">Reference No</label>
-            <input type="text" class="form-control" id="reference_no" required>
+            <input type="text" class="form-control" id="reference_no" maxlength="16" required>
             <label for="expiry_date">Expiry Date</label>
             <input type="date" class="form-control" id="expiry_date">
             <p class="form-control-static">&nbsp;</p>
@@ -62,7 +62,7 @@
           <div class="col-md-6">
             <label for="party_type" class="col-form-label">Party Type</label>
             <select class="form-control" id="party_type">
-                <option *ngFor="let party of partyList">{{party.name}}</option>
+                <option *ngFor="let party of partyList | listfilter: {imlc:true}">{{party.name}}</option>
           </select>
             <label for="party_name" class="col-form-label">Name</label>
             <input type="text" class="form-control" id="party_name">
@@ -80,7 +80,7 @@
           <div class="col-md-6">
             <label for="party_type" class="col-form-label">Party Type</label>
             <select class="form-control" id="party_type">
-                <option *ngFor="let party of partyList">{{party.name}}</option>
+                <option *ngFor="let party of partyList | listfilter: {imlc: true}">{{party.name}}</option>
           </select>
             <label for="party_name" class="col-form-label">Name</label>
             <input type="text" class="form-control" id="party_name">
@@ -132,7 +132,7 @@
             <input type="date" class="form-control" id="tenor_duedt">
             <label for="drafts_on" class="col-form-label">Drafts on</label>
             <select class="form-control" id="drafts_on">
-                    <option *ngFor="let party of partyList">{{party.name}}</option>
+                    <option *ngFor="let party of partyList | listfilter: {imlc: true, drafts_on: true}" ng-if="">{{party.name}}</option>
                     </select>
           </div>
           <div class="form-group col-md-6">
@@ -146,7 +146,7 @@
                     </select>
             <label for="available_with" class="col-form-label">Available With</label>
             <select class="form-control" id="available_with">
-                    <option *ngFor="let party of partyList">{{party.name}}</option>
+                    <option *ngFor="let party of partyList | listfilter: {imlc: true, available_with: true}">{{party.name}}</option>
                     </select>
           </div>
         </div>
@@ -267,4 +267,11 @@
       </div>
     </div>
   </form>
+</div>
+<div class="footer">
+  <button class="btn btn-secondary" type="button">Save As Template</button>
+  <button class="btn btn-success" type="button">Save & Exit</button>
+  <button class="btn btn-primary" type="submit">Submit</button>
+  <button class="btn btn-info" type="button">View Swift</button>
+  <button class="btn btn-danger" type="button">Exit</button>
 </div>

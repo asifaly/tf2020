@@ -10,12 +10,14 @@ import { PartyService } from './shared';
 import { AppComponent } from './app.component';
 import { TestformComponent } from './testform/testform.component';
 import { ImlcIssComponent } from './imlc-iss/imlc-iss.component';
+import { ListfilterPipe } from './shared/listfilter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestformComponent,
-    ImlcIssComponent
+    ImlcIssComponent,
+    ListfilterPipe
   ],
   imports: [
     BrowserModule,
